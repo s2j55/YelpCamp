@@ -1,7 +1,6 @@
 {
   "name": "YelpCamp",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,6 +14,16 @@
     "express": "^4.17.1",
     "joi": "^17.2.1",
     "method-override": "^3.0.0",
-    "mongoose": "^5.10.9"
-  }
+    "mongoose": "^5.10.10"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/s2j55/YelpCamp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/s2j55/YelpCamp/issues"
+  },
+  "homepage": "https://github.com/s2j55/YelpCamp#readme",
+  "description": ""
 }
