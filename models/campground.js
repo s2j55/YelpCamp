@@ -1,6 +1,9 @@
 const mongoose = require('mongoose');
-const review = require('./review');
+const Review = require('./review')
 const Schema = mongoose.Schema;
+
+
+// https://res.cloudinary.com/dmgdudvaq/image/upload/w_300/v1600113904/YelpCamp/jab5ctulh1a8lclnqhbt
 
 const ImageSchema = new Schema({
     url: String,
@@ -40,14 +43,18 @@ const CampgroundSchema = new Schema({
     }]
 }, opts);
 
+
 CampgroundSchema.virtual('properties.popUpMarkup').get(function() {
-    return `<strong><a href="/campgrounds/${this._id}">${this.title}</a></strong>
-    <p>${this.description.substring(0,20)}...</p>`
+    return `
+    <strong><a href="/campgrounds/${this._id}">${this.title}</a><strong>
+    <p>${this.description.substring(0, 20)}...</p>`
 });
+
+
 
 CampgroundSchema.post('findOneAndDelete', async function(doc) {
     if (doc) {
-        await review.deleteMany({
+        await Review.deleteMany({
             _id: {
                 $in: doc.reviews
             }
